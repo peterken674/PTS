@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PTSLibrary.Customer" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.Project" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAABEAAQABAAEBAgQAAAIgAAAAIA=</HashCode>
+      <FileName>Project.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.PTSAdminFacade" Collapsed="true">
+    <Position X="0.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAABAACAAAAIAAAAAAABAAEAAAAAACAA=</HashCode>
+      <FileName>PTSAdminFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.PTSClientFacade" Collapsed="true">
+    <Position X="3" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAABAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PTSClientFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.PTSCustomerFacade" Collapsed="true">
+    <Position X="5.25" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PTSCustomerFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.PTSSuperFacade" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PTSSuperFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.Subtask" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Subtask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.Task" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAAAAAAAAAAAAAAQAAAgEAAAIAAAAAAAAAEA=</HashCode>
+      <FileName>Task.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.Team" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAEQCAABEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Team.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.TeamLeader" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAACAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>TeamLeader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.TeamMember" Collapsed="true">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TeamMember.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.User" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.wm75DataSet" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="PTSLibrary.wm75DataSet.TaskRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.PredecessorDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.PersonDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.PersonRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.ProjectRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.StatusDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="PTSLibrary.wm75DataSet.ProjectRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="PTSLibrary.wm75DataSet.CustomerRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.TeamMemberDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.TeamRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.TeamMemberRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.StatusRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="PTSLibrary.wm75DataSet.SubtaskRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Delegate Name="PTSLibrary.wm75DataSet.PredecessorRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="PTSLibrary.wm75DataSet.TeamRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.TeamDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.ProjectDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="PTSLibrary.wm75DataSet.CustomerRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="PTSLibrary.wm75DataSet.PredecessorRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.TaskDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.CustomerRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="PTSLibrary.wm75DataSet.StatusRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Delegate Name="PTSLibrary.wm75DataSet.TaskRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Delegate Name="PTSLibrary.wm75DataSet.TeamMemberRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="PTSLibrary.wm75DataSet.SubtaskRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.PredecessorRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.StatusRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.CustomerDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.TeamMemberRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.ProjectRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.SubtaskDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.TaskRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.PersonRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PTSLibrary.wm75DataSet.SubtaskRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="PTSLibrary.wm75DataSet.PersonRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Delegate Name="PTSLibrary.wm75DataSet.TeamRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AI1EASAFA0AAooJJBAAASFAAIAgiSBkAFUCAgkEIDJE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.DAO.AdminDAO" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAACAAAAIAAAAAAABAAEAAAAAACAA=</HashCode>
+      <FileName>DAO\AdminDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.DAO.ClientDAO" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\ClientDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.DAO.CustomerDAO" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\CustomerDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.DAO.SuperDAO" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>DAO\SuperDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.Properties.Settings" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAACAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.wm75DataSetTableAdapters.CustomerTableAdapter" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.wm75DataSetTableAdapters.PersonTableAdapter" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.wm75DataSetTableAdapters.PredecessorTableAdapter" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.wm75DataSetTableAdapters.ProjectTableAdapter" Collapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.wm75DataSetTableAdapters.StatusTableAdapter" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.wm75DataSetTableAdapters.SubtaskTableAdapter" Collapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.wm75DataSetTableAdapters.TaskTableAdapter" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.wm75DataSetTableAdapters.TeamTableAdapter" Collapsed="true">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.wm75DataSetTableAdapters.TeamMemberTableAdapter" Collapsed="true">
+    <Position X="15" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PTSLibrary.wm75DataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="15" Y="1.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="PTSLibrary.wm75DataSetTableAdapters.TableAdapterManager.UpdateOrderOption" Collapsed="true">
+        <TypeIdentifier />
+      </Enum>
+      <Class Name="PTSLibrary.wm75DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IQAQACAADABABAEJABABMCAgCAACgIDAAAQAAIAALAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="PTSLibrary.Status" Collapsed="true">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAIAAAAAAACAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Status.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
