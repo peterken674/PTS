@@ -1,32 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PTSLibrary
 {
     [Serializable]
-    public class TeamLeader : User
-    {
-        private int teamId;
+	public class TeamLeader : User
+	{
+        public TeamLeader() { }
 
-        public int TeamId
-        {
-            get { return teamId; }
-            set { teamId = value; }
-        }
+        private int teamId; ///new field
 
-        public TeamLeader(string name, int id, int teamId)
-        {
-            this.name = name;
-            this.id = id;
+		public int TeamId ///property to provide access to teamId
+		{
+			get { return teamId; }
+			set { teamId = value; }
+		}
+
+		public TeamLeader(string name, int id, int teamid) ///constructor
+		{
+			this.name = name;
+			this.id = id;
+#pragma warning disable CS1717 // Assignment made to same variable
             this.teamId = teamId;
+#pragma warning restore CS1717 // Assignment made to same variable
         }
-
-        public static implicit operator TeamLeader(int v)
-        {
-            throw new NotImplementedException();
-        }
-    }
+	}
 }

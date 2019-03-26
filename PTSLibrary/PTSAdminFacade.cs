@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+
 namespace PTSLibrary
 {
     public class PTSAdminFacade : PTSSuperFacade
     {
-        private DAO.AdminDAO dao;
+        private new DAO.AdminDAO dao;
+
         public PTSAdminFacade() : base(new DAO.AdminDAO())
         {
             dao = (DAO.AdminDAO)base.dao;
         }
+
+        ///Authenticate method
         public int Authenticate(string username, string password)
         {
             if (username == "" || password == "")
@@ -18,8 +22,9 @@ namespace PTSLibrary
             }
             return dao.Authenticate(username, password);
         }
-        public void CreateProject(string name, DateTime startDate, DateTime endDate, int
-        customerId, int administratorId)
+
+        ///CreateProject method
+        public void CreateProject(string name, DateTime startDate, DateTime endDate, int customerId, int administratorId)
         {
             if (name == null || name == "" || startDate == null || endDate == null)
             {
@@ -27,20 +32,9 @@ namespace PTSLibrary
             }
             dao.CreateProject(name, startDate, endDate, customerId, administratorId);
         }
-        public Customer[] GetListOfCustomers()
-        {
-            return (dao.GetListOfCustomers()).ToArray();
-        }
-        public Project[] GetListOfProjects(int adminId)
-        {
-            return (dao.GetListOfProjects(adminId)).ToArray();
-        }
-        public Team[] GetListOfTeams()
-        {
-            return (dao.GetListOfTeams()).ToArray();
-        }
-        public void CreateTask(string name, DateTime startDate, DateTime endDate, int teamId,
-        Guid projectId)
+
+        ///CreateTask method
+        public void CreateTask(string name, DateTime startDate, DateTime endDate, int teamId,Guid projectId)
         {
             if (name == null || name == "" || startDate == null || endDate == null)
             {
@@ -48,5 +42,24 @@ namespace PTSLibrary
             }
             dao.CreateTask(name, startDate, endDate, teamId, projectId);
         }
+
+        ///GetListOfCustomers method
+        public Customer[] GetListOfCustomers()
+        {
+            return (dao.GetListOfCustomers()).ToArray();
+        }
+
+        ///GetListOfProjects method
+        public Project[] GetListOfProjects(int adminId)
+        {
+            return (dao.GetListOfProjects(adminId)).ToArray();
+        }
+
+        ///GetListOfTeams method
+        public Team[] GetListOfTeams()
+        {
+            return (dao.GetListOfTeams()).ToArray();
+        }
+
     }
 }

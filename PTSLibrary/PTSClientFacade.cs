@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PTSLibrary
 {
     public class PTSClientFacade : PTSSuperFacade
     {
-        private DAO.ClientDAO dao;
+        private new DAO.ClientDAO dao;
 
         public PTSClientFacade() : base(new DAO.ClientDAO())
         {
             dao = (DAO.ClientDAO)base.dao;
         }
 
+        ///Authenticate method
         public TeamLeader Authenticate(string username, string password)
         {
             if (username == "" || password == "")
@@ -24,9 +23,10 @@ namespace PTSLibrary
             return dao.Authenticate(username, password);
         }
 
+        ///GetListOfProjects method
         public Project[] GetListOfProjects(int teamId)
         {
-            return (dao.GetListOfProjects(teamId)).ToArray();
+        return (dao.GetListOfProjects(teamId)).ToArray();
         }
     }
 }

@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+
 namespace PTSLibrary.DAO
 {
     class AdminDAO : SuperDAO
     {
+        ///Authenticate method
         public int Authenticate(string username, string password)
         {
             string sql;
             SqlConnection cn;
             SqlCommand cmd;
             SqlDataReader dr;
-            sql = String.Format("SELECT UserId FROM Person WHERE IsAdministrator = 1 AND" +
-                " Username = '{0}' AND Password = '{1}'", username, password);
+
+            sql = String.Format("SELECT UserId FROM Person WHERE IsAdministrator = 1 AND Username='{0}' AND Password='{1}'", username, password);
             cn = new SqlConnection(Properties.Settings.Default.ConnectionString);
             cmd = new SqlCommand(sql, cn);
             int id = 0;
+
             try
             {
                 cn.Open();
@@ -38,23 +41,26 @@ namespace PTSLibrary.DAO
             }
             return id;
         }
-        public void CreateProject(string name, DateTime startDate, DateTime endDate, int
-        customerId, int administratorId)
+
+        ///CreateProject method
+        public void CreateProject(string name, DateTime startDate, DateTime endDate, int customerId, int administratorId)
         {
             string sql;
             SqlConnection cn;
             SqlCommand cmd;
+
+            ///generating a new Guid
             Guid projectId = Guid.NewGuid();
-            sql = "INSERT INTO Project (ProjectId, Name, ExpectedStartDate, ExpectedEndDate, " +
-                "CustomerId, AdministratorId)";
-        sql += String.Format("VALUES ( '{0}', '{1}', '{2}', '{3}', {4}, {5})", projectId, name, startDate,
-        endDate, customerId, administratorId);
+
+            sql = "INSERT INTO Project (ProjectId, Name, ExpectedStartDate, ExpectedEndDate, CustomerId, AdministratorId)";
+            sql += String.Format("VALUES ('{0}', '{1}', '{2}', '{3}', {4}, {5})", projectId, name, startDate, endDate, customerId, administratorId);
             cn = new SqlConnection(Properties.Settings.Default.ConnectionString);
             cmd = new SqlCommand(sql, cn);
+
             try
             {
                 cn.Open();
-                cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery(); ///executing an INSERT rather than a SELECT statement
             }
             catch (SqlException ex)
             {
@@ -65,6 +71,8 @@ namespace PTSLibrary.DAO
                 cn.Close();
             }
         }
+
+        ///GetListOfCustomers method
         public List<Customer> GetListOfCustomers()
         {
             string sql;
@@ -97,6 +105,9 @@ namespace PTSLibrary.DAO
             }
             return customers;
         }
+
+
+        ///GetListOfProjects method
         public List<Project> GetListOfProjects(int adminId)
         {
             string sql;
@@ -131,6 +142,8 @@ namespace PTSLibrary.DAO
             }
             return projects;
         }
+
+        ///GetListOfTeams method
         public List<Team> GetListOfTeams()
         {
             string sql;
@@ -164,17 +177,17 @@ namespace PTSLibrary.DAO
             }
             return teams;
         }
-        public void CreateTask(string name, DateTime startDate, DateTime endDate, int teamId,
-        Guid projectId)
+
+        ///CreateTask method
+        public void CreateTask(string name, DateTime startDate, DateTime endDate, int teamId, Guid projectId)
         {
             string sql;
             SqlConnection cn;
             SqlCommand cmd;
             Guid taskId = Guid.NewGuid();
-            sql = "INSERT INTO Task (TaskId, Name, ExpectedDateStarted, ExpectedDateCompleted, " +
-                "ProjectId, TeamId, StatusId)";
-        sql += String.Format("VALUES ( '{0}', '{1}', '{2}', '{3}', '{4}', {5}, {6})", taskId, name,
-        startDate, endDate, projectId, teamId, 1);
+            sql = "INSERT INTO Task (TaskId, Name, ExpectedDateStarted, ExpectedDateCompleted,ProjectId, TeamId, StatusId)";
+            sql += String.Format("VALUES ( '{0}', '{1}', '{2}', '{3}', '{4}', {5}, {6})", taskId, name,
+            startDate, endDate, projectId, teamId, 1);
             cn = new SqlConnection(Properties.Settings.Default.ConnectionString);
             cmd = new SqlCommand(sql, cn);
             try
@@ -193,3 +206,4 @@ namespace PTSLibrary.DAO
         }
     }
 }
+

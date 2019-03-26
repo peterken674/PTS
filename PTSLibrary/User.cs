@@ -5,19 +5,19 @@ using System.Text;
 namespace PTSLibrary
 {
     [Serializable]
-    public class User
-    {
-        protected string name;
-        protected int id;
+	public class User
+	{///variables
+		protected string name;
+		protected int id;
 
-        public string Name
-        {
-            get { return name; }
-        }
+		public string Name
+		{
+			get { return name; }
+		}
 
-        public int Id
-        {
-            get { return id; }
-        }
-    }
+		public int Id
+		{
+			get { return id; }
+		}
+	}
 }

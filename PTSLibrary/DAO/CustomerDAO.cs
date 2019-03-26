@@ -6,8 +6,9 @@ using System.Data;
 
 namespace PTSLibrary.DAO
 {
-    class CustomerDAO : SuperDAO
-    {
+	class CustomerDAO : SuperDAO
+	{
+        ///Authenticate method
         public int Authenticate(string username, string password)
         {
             string sql;
@@ -15,7 +16,7 @@ namespace PTSLibrary.DAO
             SqlCommand cmd;
             SqlDataReader dr;
 
-            sql = String.Format("SELECT CustomerId FROM Customer WHERE Username = '{0}' AND Password = '{1}'", username, password);
+            sql = String.Format("SELECT CustomerId FROM Customer WHERE Username= '{0}' AND Password='{1}'", username, password);
 
             cn = new SqlConnection(Properties.Settings.Default.ConnectionString);
             cmd = new SqlCommand(sql, cn);
@@ -23,6 +24,7 @@ namespace PTSLibrary.DAO
             try
             {
                 cn.Open();
+                ///command returns a single row
                 dr = cmd.ExecuteReader(CommandBehavior.SingleRow);
                 if (dr.Read())
                 {
@@ -41,44 +43,50 @@ namespace PTSLibrary.DAO
             return id;
         }
 
-        public List<Project> GetListOfProjects(int customerId)
+        ///GetListOfProjects method
+        public List<Project>GetListOfProjects(int customerId)
         {
+            ///object declaration
             string sql;
             SqlConnection cn, cn2;
             SqlCommand cmd, cmd2;
             SqlDataReader dr, dr2;
-            List<Project> projects = new List<Project>();
+            List<Project> projects;
+            projects = new List<Project>();
 
-            sql = "SELECT * FROM Customer WHERE projectId = " + customerId;
+            sql = "SELECT * FROM Project WHERE CustomerId = " + customerId;
+            ///create connection 
             cn = new SqlConnection(Properties.Settings.Default.ConnectionString);
             cmd = new SqlCommand(sql, cn);
 
             try
             {
                 cn.Open();
+                ///returns more than one row
                 dr = cmd.ExecuteReader();
-                while (dr.Read())
+                while (dr.Read()) ///iterates through all returned rows
                 {
                     List<Task> tasks = new List<Task>();
                     sql = "SELECT * FROM Task WHERE ProjectId = '" + dr["ProjectId"].ToString() + "'";
                     cn2 = new SqlConnection(Properties.Settings.Default.ConnectionString);
                     cmd2 = new SqlCommand(sql, cn2);
                     cn2.Open();
-                    dr2 = cmd.ExecuteReader();
+                    dr2 = cmd2.ExecuteReader();
                     while (dr2.Read())
                     {
-                        Task t = new Task((Guid)dr2["TAskId"], dr2["Name"].ToString(), (Status)dr2["StatusId"]);
+                        Task t = new Task((Guid)dr2["TaskId"], dr2["Name"].ToString(), (Status)dr2["StatusId"]);
                         tasks.Add(t);
                     }
                     dr2.Close();
-                    Project p = new Project (dr["Name"].ToString(), (DateTime)dr["ExpectedStartDate"], (DateTime)dr["ExpectedEndDate"], (Guid)dr["projectId"], tasks);
+                    Project p = new Project(dr["Name"].ToString(), (DateTime)dr["ExpectedStartDate"],
+                        (DateTime)dr["ExpectedEndDate"], (Guid)dr["ProjectId"], tasks);
                     projects.Add(p);
                 }
                 dr.Close();
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error Getting List", ex);
+                throw new Exception("Error getting list", ex);
             }
             finally
             {
@@ -86,5 +94,5 @@ namespace PTSLibrary.DAO
             }
             return projects;
         }
-    }
+	}
 }
