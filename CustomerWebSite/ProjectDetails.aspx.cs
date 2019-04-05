@@ -7,7 +7,9 @@ public partial class ProjectDetails : System.Web.UI.Page
     {
 
     }
-
+    /// <summary>
+    /// Gets and displays the details of specified project.
+    /// </summary>
     public void ShowProjectDetails()
     {
         if (Session["id"] == null)

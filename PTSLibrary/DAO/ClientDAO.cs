@@ -8,7 +8,12 @@ namespace PTSLibrary.DAO
 {
 	class ClientDAO : SuperDAO
 	{
-        ///Authenticate method
+        /// <summary>
+        /// Authenticates the team leader.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>The team leader name, user ID, and team ID</list>leader name, user ID and team ID</returns>
         public TeamLeader Authenticate(string username, string password)
         {
             string sql;
@@ -28,7 +33,7 @@ namespace PTSLibrary.DAO
                 dr = cmd.ExecuteReader(CommandBehavior.SingleRow);
                 if (dr.Read())
                 {
-                    leader = new TeamLeader(dr["Name"].ToString(), (int)dr["TeamId"], (int)dr["TeamId"]);
+                    leader = new TeamLeader(dr["Name"].ToString(), (int)dr["UserId"], (int)dr["TeamId"]);
                 }
                 dr.Close();
             }
@@ -42,8 +47,12 @@ namespace PTSLibrary.DAO
             }
             return leader;
         }
+        /// <summary>
+        /// Gets list of projects for a particular team.
+        /// </summary>
+        /// <param name="teamId"></param>
+        /// <returns> List of projects for a particular team. </returns>
 
-        ///GetListOfProjects method
         public List<Project> GetListOfProjects(int teamId)
         {
             ///object declaration

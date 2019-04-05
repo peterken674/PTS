@@ -6,9 +6,23 @@ using System.Data;
 
 namespace PTSLibrary.DAO
 {
+    /// <summary>
+    /// The Admin DAO
+    /// </summary>
+    /// <remarks>
+    /// This DAO provides DB access methods specific for the Administrator role.
+    /// </remarks>
     class AdminDAO : SuperDAO
     {
-        ///Authenticate method
+        /// <summary>
+        /// Authenticate the admin.
+        /// </summary>
+        /// <remarks>
+        /// Authenticates the administrator when logging in by checking their username and passsword in the database.
+        /// </remarks>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns> The user ID</returns>
         public int Authenticate(string username, string password)
         {
             string sql;
@@ -42,16 +56,24 @@ namespace PTSLibrary.DAO
             return id;
         }
 
-        ///CreateProject method
+        /// <summary>
+        /// Creates a new project.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="customerId"></param>
+        /// <param name="administratorId"></param>
         public void CreateProject(string name, DateTime startDate, DateTime endDate, int customerId, int administratorId)
         {
             string sql;
             SqlConnection cn;
             SqlCommand cmd;
 
-            ///generating a new Guid
+            /// Generating a new Guid
             Guid projectId = Guid.NewGuid();
 
+            /// Executing an INSERT rather than a SELECT statement
             sql = "INSERT INTO Project (ProjectId, Name, ExpectedStartDate, ExpectedEndDate, CustomerId, AdministratorId)";
             sql += String.Format("VALUES ('{0}', '{1}', '{2}', '{3}', {4}, {5})", projectId, name, startDate, endDate, customerId, administratorId);
             cn = new SqlConnection(Properties.Settings.Default.ConnectionString);
@@ -60,7 +82,7 @@ namespace PTSLibrary.DAO
             try
             {
                 cn.Open();
-                cmd.ExecuteNonQuery(); ///executing an INSERT rather than a SELECT statement
+                cmd.ExecuteNonQuery(); 
             }
             catch (SqlException ex)
             {
@@ -72,7 +94,10 @@ namespace PTSLibrary.DAO
             }
         }
 
-        ///GetListOfCustomers method
+        /// <summary>
+        /// Gets the list of customers.
+        /// </summary>
+        /// <returns> List of customers. </returns>
         public List<Customer> GetListOfCustomers()
         {
             string sql;
@@ -106,8 +131,12 @@ namespace PTSLibrary.DAO
             return customers;
         }
 
-
-        ///GetListOfProjects method
+        /// <summary>
+        /// Gets the list of projects.
+        /// </summary>
+        /// <remarks> Gets a list of all projects creates by a specific admininistrator. </remarks>
+        /// <param name="adminId"></param>
+        /// <returns> List of projects. </returns>
         public List<Project> GetListOfProjects(int adminId)
         {
             string sql;
@@ -143,7 +172,10 @@ namespace PTSLibrary.DAO
             return projects;
         }
 
-        ///GetListOfTeams method
+        /// <summary>
+        /// Gets a list of teams.
+        /// </summary>
+        /// <returns>List of all teams. </returns>
         public List<Team> GetListOfTeams()
         {
             string sql;
@@ -178,7 +210,14 @@ namespace PTSLibrary.DAO
             return teams;
         }
 
-        ///CreateTask method
+        /// <summary>
+        /// Creates a new task.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="teamId"></param>
+        /// <param name="projectId"></param>
         public void CreateTask(string name, DateTime startDate, DateTime endDate, int teamId, Guid projectId)
         {
             string sql;

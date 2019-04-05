@@ -4,6 +4,9 @@ using System.Text;
 
 namespace PTSLibrary
 {
+    /// <summary>
+    /// The project class.
+    /// </summary>
     [Serializable]
 	public class Project
 	{
@@ -14,6 +17,9 @@ namespace PTSLibrary
 		private Guid projectId;
 		private List<Task> tasks;
 
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public Project() { }
         public string Name
 		{
@@ -50,7 +56,14 @@ namespace PTSLibrary
 			set { tasks = value; }
 		}
 
-		///constructors
+		/// <summary>
+        /// Constructor to set the tasks.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="projectId"></param>
+        /// <param name="tasks"></param>
 		public Project(string name, DateTime startDate, DateTime endDate, Guid projectId, List<Task> tasks)
 		{
 			this.name = name;
@@ -60,6 +73,14 @@ namespace PTSLibrary
 			this.tasks = tasks;
 		}
 
+        /// <summary>
+        /// Constructor to set the customers.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="projectId"></param>
+        /// <param name="customer"></param>
 		public Project(string name, DateTime startDate, DateTime endDate, Guid projectId, Customer customer)
 		{
 			this.name = name;

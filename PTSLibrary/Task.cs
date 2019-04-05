@@ -4,9 +4,20 @@ using System.Text;
 
 namespace PTSLibrary
 {
+    /// <summary>
+    /// The Task class.
+    /// </summary>
+    /// <remarks> Represents a task within a
+    ///project, which is assigned to a
+    ///team and can be broken into
+    ///subtasks. Linked to Status through association. </remarks>
+    
     [Serializable]
 	public class Task
 	{
+        /// <summary>
+        /// Default constructor for class Task.
+        /// </summary>
         public Task() { }
 
         private Guid taskId;

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace PTSLibrary
 {
+    /// <summary>
+    /// The User class.
+    /// </summary>
     [Serializable]
 	public class User
 	{///variables

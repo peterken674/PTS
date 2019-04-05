@@ -6,9 +6,17 @@ using System.Data;
 
 namespace PTSLibrary.DAO
 {
+    /// <summary>
+    /// The customer DAO.
+    /// </summary>
 	class CustomerDAO : SuperDAO
 	{
-        ///Authenticate method
+        /// <summary>
+        /// Authenticates the customer.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns> The customer ID. </returns>
         public int Authenticate(string username, string password)
         {
             string sql;
@@ -42,8 +50,11 @@ namespace PTSLibrary.DAO
             }
             return id;
         }
-
-        ///GetListOfProjects method
+        /// <summary>
+        /// Gets list of all projects by a particular customer.
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns>List of projects associated with a particular customer.</returns>
         public List<Project>GetListOfProjects(int customerId)
         {
             ///object declaration

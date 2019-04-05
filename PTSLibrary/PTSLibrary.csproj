@@ -62,7 +62,6 @@
     <Compile Include="Task.cs" />
     <Compile Include="Team.cs" />
     <Compile Include="TeamLeader.cs" />
-    <Compile Include="TeamMember.cs" />
     <Compile Include="User.cs" />
     <Compile Include="wm75DataSet.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -6,9 +6,16 @@ using System.Data;
 
 namespace PTSLibrary.DAO
 {
+    /// <summary>
+    /// The super DAO.
+    /// </summary>
 	public class SuperDAO
 	{
-        ///GetCustomer method
+        /// <summary>
+        /// Gets a customer.
+        /// </summary>
+        /// <param name="custId"></param>
+        /// <returns>Customer name and customer ID. </returns>
         protected Customer GetCustomer(int custId)
         {
             ///object declaration (necessary to access the database) 
@@ -44,8 +51,11 @@ namespace PTSLibrary.DAO
             }
             return cust;
         }
-
-        ///GetListOfTasks method
+        /// <summary>
+        /// Gets the list of Tasks in a particular project.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <returns> List of tasks in a particular project. </returns>
         public List<Task> GetListOfTasks(Guid projectId)
         {
             ///object declaration
